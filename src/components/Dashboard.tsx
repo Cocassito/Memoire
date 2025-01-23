@@ -24,12 +24,17 @@ const chapters = [
 
 const Dashboard: React.FC<DashboardProps> = ({ updateReadingTime, currentChapter, setCurrentChapter }) => {
   const [readingTime, setReadingTime] = useState<number>(0);
-
+  useEffect(() => {
+    console.log("Temps de lecture:", readingTime);
+  }, [readingTime]);
+  
   useEffect(() => {
     const interval = setInterval(() => {
       setReadingTime((prevTime) => prevTime + 1);
       updateReadingTime((prevTime) => prevTime + 1);
     }, 1000);
+
+  
 
     return () => clearInterval(interval);
   }, [updateReadingTime]);
@@ -48,7 +53,9 @@ const Dashboard: React.FC<DashboardProps> = ({ updateReadingTime, currentChapter
 
   return (
     <div className="dashboard">
+
       <ProgressBar progress={(currentChapter + 1) / chapters.length * 100} />
+      {readingTime >= 60 && <p style={{color:"red", zIndex:9999, fontSize:"50px"}}>Bravo ! Vous avez lu pendant plus d'une minute ! 🎉</p>}
       <Chapter 
         title={chapters[currentChapter].title} 
         content={chapters[currentChapter].content} 
