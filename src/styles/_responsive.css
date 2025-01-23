@@ -1,0 +1,24 @@
+/* 📌 Responsive Design */
+@media screen and (max-width: 900px) {
+    .sidebar {
+      width: 180px;
+    }
+    .content {
+    }
+  }
+  
+  @media screen and (max-width: 600px) {
+    .app {
+      flex-direction: column;
+    }
+    .sidebar {
+      width: 100%;
+      flex-direction: row;
+      justify-content: space-around;
+      height: auto;
+    }
+    .content {
+      margin-left: 0;
+    }
+  }
+  

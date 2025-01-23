@@ -1,0 +1,15 @@
+  .annexe-section {
+    margin-bottom: 30px;
+  }
+  
+  .annexe-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .annexe-image {
+    width: 100%; 
+    height: 500px; 
+    object-fit: contain; 
+  }
+  

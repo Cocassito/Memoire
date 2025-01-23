@@ -1,0 +1,25 @@
+.txt {
+    flex-grow: 1;
+    overflow-y: auto; 
+    max-height: 100%; 
+    padding:64px; 
+    box-sizing: border-box; 
+    font-size: 24px;
+    line-height: 2;
+    text-align: justify; 
+  }
+
+.txt::-webkit-scrollbar {
+    width: 10px; 
+  }
+  
+  .txt::-webkit-scrollbar-thumb {
+    background-color: #555; 
+    border-radius: 10px; 
+  }
+  
+  .txt::-webkit-scrollbar-track {
+    background: #333;
+    border-radius: 10px; 
+  }
+  

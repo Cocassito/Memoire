@@ -1,0 +1,17 @@
+.content {
+  display: flex;             /* Utilisation de Flexbox */
+  flex-direction: column;    /* Les enfants seront disposés en colonne */
+  flex: 1;                   /* L'élément occupe tout l'espace restant */
+  background-color: #050505;
+  width: 100%;
+  height: 100vh;             /* Utiliser toute la hauteur de la fenêtre */
+  padding: 16px 16px 16px 0;
+  color: #F1F1F1;
+  box-sizing: border-box;
+}
+  
+  .content.collapsed {
+    overflow: hidden;
+    width: 100%;
+  }
+  

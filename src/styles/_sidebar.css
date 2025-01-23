@@ -1,0 +1,85 @@
+.sidebar {
+  position: relative;
+  background: #050505;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  box-sizing: border-box;
+  transition: width 0.3s ease;
+  padding: 16px;
+  box-sizing: border-box;
+  width: 220px;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+}
+
+.sidebar.collapsed {
+  width: 90px;
+}
+
+.toggle-btn {
+  position: absolute;
+  bottom: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: white;
+  padding: 0;
+}
+
+.arrow {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.rotated {
+  transform: rotate(180deg);
+}
+
+.sidebar a {
+  display: flex;
+  align-items: center;
+  width: 90%;
+  padding: 8px;
+  margin: 8px 0;
+  font-size: 1em;
+  text-decoration: none;
+  text-align: left;
+  color: white;
+  background: #007bff;
+  border-radius: 5px;
+  transition: background 0.3s ease, padding-left 0.3s ease;
+}
+
+.sidebar a:hover {
+  background: #0056b3;
+  padding-left: 15px;
+}
+
+.sidebar .active {
+  background: #28a745;
+  font-weight: bold;
+}
+
+.icon {
+  margin-right: 10px;
+}
+
+.sidebar.collapsed .icon {
+  margin: 0;
+}
+
+.sidebar.collapsed a {
+  justify-content: center;
+  text-align: center;
+  padding: 10px 0;
+  box-sizing: border-box;
+}
+
+.sidebar.collapsed h2 {
+  display: none;
+}

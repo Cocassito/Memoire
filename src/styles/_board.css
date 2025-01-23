@@ -1,0 +1,57 @@
+.summary {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.9);
+  margin-bottom: 20px;
+}
+
+.summary p {
+  margin: 0;
+  font-size: 1.2em;
+  font-weight: 500;
+}
+
+.chart-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 200px;
+}
+
+.chart-line-container {
+  width: 100%;
+  height: 300px;
+  border-radius: 8px;
+  background-color: #252525;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.9);
+  display: flex;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.chart-line-wrapper {
+  width: 100%;
+  height: auto;
+  max-height: 400px;
+  border-radius: 8px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+.activity-ring-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.time-text {
+  position: absolute;
+  color: #00E148;
+  font-weight: bold;
+}
+
