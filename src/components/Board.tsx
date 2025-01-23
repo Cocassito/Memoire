@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Pie, Line } from "react-chartjs-2";
+import { Line } from "react-chartjs-2";
 import ActivityRings from "react-activity-rings";
 import {
   Chart as ChartJS,
@@ -120,64 +120,68 @@ const Board: React.FC<BoardProps> = ({ totalTime, chaptersRead }) => {
   };
 
   return (
-    
     <div className="dashboard" ref={chartContainerRef}>
-       <motion.div
-    initial={{ opacity: 0, y: 50 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.5 }} >
-      <h2 style={{ margin: "0", marginBottom: "16px" }}>Suivi de la lecture</h2>
-      <div className="summary">
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <p> Objectif : 5 min </p>
-          <div className="activity-ring-container">
-            <ActivityRings data={activityData} config={activityConfig} />
-            <p className="time-text" style={{fontSize:'16px'}}>{formatTime(timeInSeconds)}</p>
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+      >
+        <h2 style={{ margin: "0", marginBottom: "16px" }}>Suivi de la lecture</h2>
+        <div className="summary">
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <p> Objectif : 5 min </p>
+            <div className="activity-ring-container">
+              <ActivityRings data={activityData} config={activityConfig} />
+              <p className="time-text" style={{ fontSize: "16px" }}>
+                {formatTime(timeInSeconds)}
+              </p>
+            </div>
           </div>
-        </div>
-        
-        <div className="chart-container">
-          <Pie
-            data={chaptersData}
-            options={{
-              responsive: true,
-              plugins: {
-                legend: {
-                  display: true,   
-                  position:"top", 
-                  align: "start",   
-                  labels: {
-                    font: {
-                      size: 14,  
+
+          {/* Désactiver temporairement la Pie Chart */}
+          {/* <div className="chart-container">
+            <Pie
+              data={chaptersData}
+              options={{
+                responsive: true,
+                plugins: {
+                  legend: {
+                    display: true,
+                    position: "top",
+                    align: "start",
+                    labels: {
+                      font: {
+                        size: 14,
+                      },
+                      color: "#F1F1F1",
+                      padding: 10,
                     },
-                    color: "#F1F1F1", 
-                    padding: 10,   
+                  },
+                  tooltip: { enabled: true },
+                },
+                elements: {
+                  arc: {
+                    borderWidth: 0, // Pas de bordure supplémentaire
                   },
                 },
-                tooltip: { enabled: true },
-              },
-              elements: {
-                arc: {
-                  borderWidth: 0,  // Pas de bordure supplémentaire
-                },
-              },
-              cutout: 40, // Ajoute de l'espace au centre du Pie chart (effet donut)
-            }}
-          />
+                cutout: 40, // Ajoute de l'espace au centre du Pie chart (effet donut)
+              }}
+            />
+          </div> */}
         </div>
-      </div>
-      <div className="chart-line-container">
-        <div className="chart-line-wrapper">
-          <Line key={chartKey} data={lineChartData} options={commonOptions} />
+
+        <div className="chart-line-container">
+          <div className="chart-line-wrapper">
+            <Line key={chartKey} data={lineChartData} options={commonOptions} />
+          </div>
         </div>
-      </div>
       </motion.div>
     </div>
   );
